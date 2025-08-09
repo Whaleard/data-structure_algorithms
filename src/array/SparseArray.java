@@ -25,7 +25,7 @@ public class SparseArray {
     public static void main(String[] args) {
         // 创建一个原始的二维数组 11 * 11
         // 0：没有棋子；1：黑子；2：蓝子
-        int chessArr1[][] = new int[11][11];
+        int[][] chessArr1 = new int[11][11];
         chessArr1[1][2] = 1;
         chessArr1[2][3] = 2;
         // 输出原始的二维数组
@@ -49,7 +49,7 @@ public class SparseArray {
         }
 
         // 2、创建对应的稀疏数组
-        int sparseArr[][] = new int[sum + 1][3];
+        int[][] sparseArr = new int[sum + 1][3];
         // 给稀疏数组赋值
         sparseArr[0][0] = chessArr1.length;
         sparseArr[0][1] = chessArr1.length;
