@@ -65,7 +65,7 @@ class ArrayQueue {
         // 尾指针后移
         // 尾指针指向队列最后一个数据，故先将尾指针后移一位再将数据入队列
         this.rear++;
-        this.arr[rear] = n;
+        this.arr[this.rear] = n;
     }
 
     /**
@@ -93,7 +93,7 @@ class ArrayQueue {
         }
         // 遍历
         for (int i = 0; i < this.arr.length; i++) {
-            System.out.printf("arr[%d]=%d\n", i, arr[i]);
+            System.out.printf("arr[%d]=%d\n", i, this.arr[i]);
         }
     }
 
