@@ -1,13 +1,73 @@
 package queue;
 
+import java.util.Scanner;
+
 /**
- * 队列特点
- *     1、队列是一个有序列表，可以用数组或是链表来实现
- *     2、遵循先入先出原则。即：先存入队列的数据，要先取出；后存入的要后取出
- *
  * 使用数组模拟队列
  *
  * @author Mr.MC
+ */
+public class ArrayQueueDemo {
+    public static void main(String[] args) {
+        // 创建一个队列
+        ArrayQueue queue = new ArrayQueue(3);
+        // 接收用户输入
+        char key = ' ';
+        Scanner scanner = new Scanner(System.in);
+        boolean loop = true;
+        // 输入一个菜单
+        while (loop) {
+            System.out.println("s(show)：显示队列");
+            System.out.println("e(exit)：退出程序");
+            System.out.println("a(add)：添加数据到队列");
+            System.out.println("g(get)：从队列取出数据");
+            System.out.println("h(head)：查看队列头的数据");
+            // 接收一个字符
+            key = scanner.next().charAt(0);
+            switch (key) {
+                case 's':
+                    queue.showQueue();
+                    break;
+                case 'a':
+                    System.out.println("请输入一个数");
+                    int value = scanner.nextInt();
+                    queue.addQueue(value);
+                    break;
+                // 取出数据
+                case 'g':
+                    try {
+                        int res = queue.getQueue();
+                        System.out.printf("取出的数据是%d\n", res);
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
+                    break;
+                // 查看队列头的数据
+                case 'h':
+                    try {
+                        int res = queue.headQueue();
+                        System.out.printf("队列头的数据是%d\n", res);
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
+                    break;
+                // 退出
+                case 'e':
+                    scanner.close();
+                    loop = false;
+                    break;
+                default:
+                    break;
+            }
+        }
+        System.out.println("程序退出~~");
+    }
+}
+
+/**
+ * 队列特点
+ *  1、队列是一个有序列表，可以用数组或是链表来实现
+ *  2、遵循先入先出原则。即：先存入队列的数据，要先取出；后存入的要后取出
  */
 class ArrayQueue {
     /**

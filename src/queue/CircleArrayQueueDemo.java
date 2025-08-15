@@ -1,16 +1,79 @@
 package queue;
 
+import java.util.Scanner;
+
 /**
- * 使用数组模拟环形队列思路分析：
- *      1、front变量的含义：front指向队列的第一个元素， 也就是说arr[front]就是队列的第一个元素，front的初始值为0
- *      2、rear变量的含义：rear指向队列的最后一个元素的后一个位置，rear的初始值为0
- *      3、当队列满时，条件是(rear + 1) % maxSize == front
- *      4、队列为空的条件，rear == front
- *      5、队列中有效数据的个数(rear + maxSize - front) % maxSize
+ * 使用数组模拟环形队列
  *
  * @author Mr.MC
  */
-public class CircleArrayQueue {
+public class CircleArrayQueueDemo {
+    public static void main(String[] args) {
+        // 创建一个队列
+        // 最大长度设置4，其队列的有效数据最大是3
+        CircleArrayQueue queue = new CircleArrayQueue(4);
+        // 接收用户输入
+        char key = ' ';
+        Scanner scanner = new Scanner(System.in);
+        boolean loop = true;
+        // 输入一个菜单
+        while (loop) {
+            System.out.println("s(show)：显示队列");
+            System.out.println("e(exit)：退出程序");
+            System.out.println("a(add)：添加数据到队列");
+            System.out.println("g(get)：从队列取出数据");
+            System.out.println("h(head)：查看队列头的数据");
+            // 接收一个字符
+            key = scanner.next().charAt(0);
+            switch (key) {
+                case 's':
+                    queue.showQueue();
+                    break;
+                case 'a':
+                    System.out.println("请输入一个数");
+                    int value = scanner.nextInt();
+                    queue.addQueue(value);
+                    break;
+                // 取出数据
+                case 'g':
+                    try {
+                        int res = queue.getQueue();
+                        System.out.printf("取出的数据是%d\n", res);
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
+                    break;
+                // 查看队列头的数据
+                case 'h':
+                    try {
+                        int res = queue.headQueue();
+                        System.out.printf("队列头的数据是%d\n", res);
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
+                    break;
+                // 退出
+                case 'e':
+                    scanner.close();
+                    loop = false;
+                    break;
+                default:
+                    break;
+            }
+        }
+        System.out.println("程序退出~~");
+    }
+}
+
+/**
+ * 使用数组模拟环形队列思路分析：
+ *  1、front变量的含义：front指向队列的第一个元素， 也就是说arr[front]就是队列的第一个元素，front的初始值为0
+ *  2、rear变量的含义：rear指向队列的最后一个元素的后一个位置，rear的初始值为0
+ *  3、当队列满时，条件是(rear + 1) % maxSize == front
+ *  4、队列为空的条件，rear == front
+ *  5、队列中有效数据的个数(rear + maxSize - front) % maxSize
+ */
+class CircleArrayQueue {
     /**
      * 表示数组的最大容量
      */
