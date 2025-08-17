@@ -40,15 +40,15 @@ public class SingleLinkedListDemo {
         System.out.println("删除后的链表情况");
         singleLinkedList.list();
 
-        /**
-         * 测试：获取单链表的有效节点个数
-         */
+        // 测试：获取单链表的有效节点个数
         System.out.println("有效的节点个数：" + getLength(singleLinkedList.getHead()));
 
-        /**
-         * 测试：获取链表的倒数k个节点
-         */
+        // 测试：获取链表的倒数k个节点
         System.out.println(findLastIndexNode(singleLinkedList.getHead(), 3));
+
+        // 测试：反转单向链表
+        reverseList(singleLinkedList.getHead());
+        singleLinkedList.list();
     }
 
     /**
@@ -104,6 +104,35 @@ public class SingleLinkedListDemo {
             temp = temp.next;
         }
         return temp;
+    }
+
+    /**
+     * 将单链表反转
+     * @param head
+     */
+    public static void reverseList(HeroNode head) {
+        // 如果当前链表为空，或者只有一个节点，无需反转，直接返回
+        if (head.next == null || head.next.next == null) {
+            return;
+        }
+        // 定义一个辅助的指针（变量），帮助我们来遍历链表
+        HeroNode cur = head.next;
+        // 指定当前节点cur的下一个节点
+        HeroNode next = null;
+        HeroNode reverseHead = new HeroNode(0, "", "");
+        // 遍历原来的链表，每遍历一个节点，就将其取出，并放在新的链表reverseHead的最前端
+        while (cur != null) {
+            // 先暂时保存当前节点的下一个节点
+            next = cur.next;
+            // 将cur的下一个节点指向新的链表的最前端
+            cur.next = reverseHead.next;
+            // 将cur链接到新的链表上
+            reverseHead.next = cur;
+            // 将cur后移
+            cur = next;
+        }
+        // 将head.next指向reverseHead.next，实现单链表的反转
+        head.next = reverseHead.next;
     }
 }
 
