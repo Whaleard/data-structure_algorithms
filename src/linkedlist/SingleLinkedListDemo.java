@@ -165,6 +165,65 @@ public class SingleLinkedListDemo {
             System.out.println(stack.pop());
         }
     }
+
+    /**
+     * 两个有序单向链表合并
+     * @param head
+     * @param head2
+     */
+    public static void merge(HeroNode head, HeroNode head2) {
+        if (head.next == null || head2.next == null) {
+            return;
+        }
+
+        HeroNode temp = head.next;
+        HeroNode tempNext;
+        HeroNode cur = head2.next;
+        HeroNode curNext;
+        // 判断将第一个节点值小的作为被插入的链表
+        if (head.next.no <= head2.next.no) {
+            // 遍历插入链表
+            while (cur != null) {
+                curNext = cur.next;
+                while (temp.next != null) {
+                    tempNext = temp.next;
+                    if (cur.no < temp.next.no) {
+                        cur.next = temp.next;
+                        temp.next = cur;
+                        break;
+                    }
+                    temp = tempNext;
+                }
+
+                if (temp.next == null) {
+                    temp.next = cur;
+                    break;
+                }
+                cur = curNext;
+            }
+        } else {
+            // 遍历插入链表
+            while (temp != null) {
+                tempNext = temp.next;
+                while (cur.next != null) {
+                    curNext = cur.next;
+                    if (temp.no < cur.next.no) {
+                        temp.next = cur.next;
+                        cur.next = temp;
+                        break;
+                    }
+                    cur = curNext;
+                }
+
+                if (cur.next == null) {
+                    cur.next = temp;
+                    break;
+                }
+                temp = tempNext;
+            }
+        }
+
+    }
 }
 
 /**
@@ -181,7 +240,7 @@ class SingleLinkedList {
      * @return
      */
     public HeroNode getHead() {
-        return head;
+        return this.head;
     }
 
     /**
