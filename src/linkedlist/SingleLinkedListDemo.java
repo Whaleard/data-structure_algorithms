@@ -1,5 +1,7 @@
 package linkedlist;
 
+import java.util.Stack;
+
 /**
  * @author Mr.MC
  */
@@ -47,8 +49,13 @@ public class SingleLinkedListDemo {
         System.out.println(findLastIndexNode(singleLinkedList.getHead(), 3));
 
         // 测试：反转单向链表
+        System.out.println("反转单链表");
         reverseList(singleLinkedList.getHead());
         singleLinkedList.list();
+
+        // 测试：逆序打印单向链表（不改变链表的结构）
+        System.out.println("逆序打印单链表");
+        reversePrint(singleLinkedList.getHead());
     }
 
     /**
@@ -133,6 +140,30 @@ public class SingleLinkedListDemo {
         }
         // 将head.next指向reverseHead.next，实现单链表的反转
         head.next = reverseHead.next;
+    }
+
+    /**
+     * 逆序打印单向链表
+     * @param head
+     */
+    public static void reversePrint(HeroNode head) {
+        // 空链表不能打印
+        if (head.next == null) {
+            return;
+        }
+        // 创建一个栈，将各个节点压入栈
+        Stack<HeroNode> stack = new Stack<>();
+        HeroNode cur = head.next;
+        while (cur != null) {
+            stack.push(cur);
+            // cur后移，压入下一个节点
+            cur = cur.next;
+        }
+        // 将栈中的节点进行打印，pop出栈
+        while (stack.size() > 0) {
+            // 栈的特点是先进后出
+            System.out.println(stack.pop());
+        }
     }
 }
 
