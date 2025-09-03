@@ -4,7 +4,7 @@ package recursion;
  * 迷宫回溯问题
  * @author Mr.MC
  */
-public class MazeBacktrackingProblemDemo {
+public class MazeBacktracking {
     public static void main(String[] args) {
         // 先创建一个二维数组，模拟迷宫
         // 地图
