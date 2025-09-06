@@ -8,7 +8,7 @@ package sort;
 public class SelectSort {
 
     public static void main(String[] args) {
-        // 测试一下冒泡排序的时间复杂度O(n^2)
+        // 测试一下选择排序的时间复杂度O(n^2)
         // 创建一个长度为80000的数组
         int[] arr = new int[80000];
         for (int i = 0; i < 80000; i++) {
@@ -18,7 +18,7 @@ public class SelectSort {
         // 排序开始时间
         long startTime = System.currentTimeMillis();
 
-        // 测试冒泡排序
+        // 测试选择排序
         selectSort(arr);
 
         // 排序结束时间
