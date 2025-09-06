@@ -1,6 +1,9 @@
 package recursion;
 
 /**
+ * 8皇后问题
+ *  在一个8*8的棋盘上放8个皇后，任意2个皇后不能处于同一行、同一列以及同一条斜线上，输出所有可能的摆放情况
+ *
  * @author Mr.MC
  */
 public class Queue8 {

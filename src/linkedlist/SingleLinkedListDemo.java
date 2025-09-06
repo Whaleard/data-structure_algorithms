@@ -3,6 +3,8 @@ package linkedlist;
 import java.util.Stack;
 
 /**
+ * 单向链表
+ *
  * @author Mr.MC
  */
 public class SingleLinkedListDemo {
@@ -284,9 +286,11 @@ class SingleLinkedList {
                 break;
             }
 
-            if (temp.next.no > heroNode.no) {   // 位置找到，插入到temp后面即可
+            if (temp.next.no > heroNode.no) {
+                // 位置找到，插入到temp后面即可
                 break;
-            } else if (temp.next.no == this.head.no) {   // 说明希望添加的heroNode的编号已经存在
+            } else if (temp.next.no == this.head.no) {
+                // 说明希望添加的heroNode的编号已经存在
                 flag = true;
                 break;
             }
@@ -294,7 +298,8 @@ class SingleLinkedList {
         }
 
         // 判断flag的值
-        if (flag) { // 不能添加，说明编号存在
+        if (flag) {
+            // 不能添加，说明编号存在
             System.out.printf("准备插入的英雄的编号%d已经存在了，不能加入\n", heroNode.no);
         } else {
             // 插入到链表中

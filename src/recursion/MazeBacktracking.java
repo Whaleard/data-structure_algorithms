@@ -2,6 +2,7 @@ package recursion;
 
 /**
  * 迷宫回溯问题
+ *
  * @author Mr.MC
  */
 public class MazeBacktracking {

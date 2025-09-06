@@ -1,6 +1,7 @@
 package linkedlist;
 
 /**
+ * 双向链表
  *
  * @author Mr.MC
  */
@@ -106,7 +107,8 @@ class DoubleLinkedList {
         }
 
         // 判断flag的值
-        if (flag) { // 不能添加，说明编号存在
+        if (flag) {
+            // 不能添加，说明编号存在
             System.out.printf("准备插入的英雄的编号%d已经存在了，不能加入\n", heroNode.no);
         } else {
             // 插入到链表中
@@ -185,7 +187,8 @@ class DoubleLinkedList {
             temp = temp.next;
         }
         // 判断flag
-        if (flag) { // 找到
+        // 找到
+        if (flag) {
             // 删除
             temp.pre.next = temp.next;
             // 如果是最后一个节点，就不需要执行
