@@ -23,7 +23,7 @@ public class SelectSort {
 
         // 排序结束时间
         long endTime = System.currentTimeMillis();
-        System.out.println("冒泡排序共花费：" + (endTime - startTime) / 1000 + "秒");
+        System.out.println("选择排序共花费：" + (endTime - startTime) / 1000 + "秒");
     }
 
     /**
