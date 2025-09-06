@@ -27,7 +27,7 @@ public class SelectSort {
     }
 
     /**
-     * 选择排序
+     * 选择排序算法
      * @param arr
      */
     public static void selectSort(int[] arr) {
