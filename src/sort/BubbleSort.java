@@ -10,8 +10,6 @@ import java.util.Arrays;
 public class BubbleSort {
 
     public static void main(String[] args) {
-        long startTime = System.currentTimeMillis();
-
         // 测试一下冒泡排序的时间复杂度O(n^2)
         // 创建一个长度为80000的数组
         int[] arr = new int[80000];
@@ -19,9 +17,13 @@ public class BubbleSort {
             arr[i] = (int) (Math.random() * 80000);
         }
 
+        // 排序开始时间
+        long startTime = System.currentTimeMillis();
+
         // 测试冒泡排序
         bubbleSort(arr);
 
+        // 排序结束时间
         long endTime = System.currentTimeMillis();
         System.out.println("冒泡排序共花费：" + (endTime - startTime) / 1000 + "秒");
     }
