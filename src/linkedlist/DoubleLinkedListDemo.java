@@ -6,6 +6,7 @@ package linkedlist;
  * @author Mr.MC
  */
 public class DoubleLinkedListDemo {
+
     public static void main(String[] args) {
         // 先创建节点
         HeroNode2 hero1 = new HeroNode2(1, "宋江", "及时雨");

@@ -8,6 +8,7 @@ import java.util.Scanner;
  * @author Mr.MC
  */
 public class ArrayStackDemo {
+
     public static void main(String[] args) {
         // 创建ArrayStack对象
         ArrayStack stack = new ArrayStack(4);

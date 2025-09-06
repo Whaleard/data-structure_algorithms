@@ -10,6 +10,7 @@ import java.util.Arrays;
  * @author Mr.Mc
  */
 public class Josephus {
+
     public static void main(String[] args) {
         // 测试构建和遍历环形链表
         CircleSingleLinkedList circleSingleLinkedList = new CircleSingleLinkedList();

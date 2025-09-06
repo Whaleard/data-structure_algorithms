@@ -1,9 +1,12 @@
 package stack;
 
 /**
+ * 栈实现表达式计算
+ *
  * @author Mr.MC
  */
 public class Calculator {
+
     public static void main(String[] args) {
         // 表达式
         String expression = "3+2*6-2";

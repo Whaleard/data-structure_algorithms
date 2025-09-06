@@ -8,6 +8,7 @@ import java.util.Arrays;
  * @author Mr.MC
  */
 public class BubbleSort {
+
     public static void main(String[] args) {
         long startTime = System.currentTimeMillis();
 

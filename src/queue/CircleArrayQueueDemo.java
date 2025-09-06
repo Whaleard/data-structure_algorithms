@@ -8,6 +8,7 @@ import java.util.Scanner;
  * @author Mr.MC
  */
 public class CircleArrayQueueDemo {
+
     public static void main(String[] args) {
         // 创建一个队列
         // 最大长度设置4，其队列的有效数据最大是3

@@ -8,6 +8,7 @@ import java.util.Scanner;
  * @author Mr.MC
  */
 public class ArrayQueueDemo {
+
     public static void main(String[] args) {
         // 创建一个队列
         ArrayQueue queue = new ArrayQueue(3);

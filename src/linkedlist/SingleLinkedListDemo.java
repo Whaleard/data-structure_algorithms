@@ -8,6 +8,7 @@ import java.util.Stack;
  * @author Mr.MC
  */
 public class SingleLinkedListDemo {
+
     public static void main(String[] args) {
         // 先创建节点
         HeroNode hero1 = new HeroNode(1, "宋江", "及时雨");

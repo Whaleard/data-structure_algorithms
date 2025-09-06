@@ -5,10 +5,12 @@ import java.util.List;
 import java.util.Stack;
 
 /**
- * 逆波兰
+ * 逆波兰表达式（后缀表达式）计算
+ *
  * @author Mr.MC
  */
 public class PolandNotation {
+
     public static void main(String[] args) {
         // 先定义一个逆波兰表达式
         // 为了方便，逆波兰表达式的数字和符号使用空格隔开
